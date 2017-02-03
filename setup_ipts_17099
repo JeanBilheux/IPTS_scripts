@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+import shutil
+import os, stat
+import glob
+
+raw_path = '/SNS/users/j35/notebooks/'
+folder = 'IPTS_17099'
+
+home = os.path.expanduser("~")
+target_folder = home + '/notebooks/' + folder
+
+if os.path.exists(target_folder):
+    os.rmdir(target_folder)
+    
+shutil.copytree('/SNS/users/j35/notebooks/' + folder, target_folder)
+
