@@ -13,5 +13,6 @@ target_folder = home + '/notebooks/' + folder
 if os.path.exists(target_folder):
     os.rmdir(target_folder)
     
-shutil.copytree('/SNS/users/j35/notebooks/' + folder, target_folder)
-
+#shutil.copytree('/SNS/users/j35/notebooks/' + folder, target_folder)
+command = "git clone https://ornlneutronimaging.git/{}".format(folder)
+os.system(command)
