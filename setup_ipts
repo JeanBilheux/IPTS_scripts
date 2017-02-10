@@ -3,9 +3,11 @@
 import shutil
 import os, stat
 import glob
+import sys
 
-raw_path = '/SNS/users/j35/notebooks/'
-folder = 'IPTS_17099'
+folder = 'IPTS_{}'.format(sys.argv[1])
+
+raw_path = '/SNS/users/j35/git/IPTS/'
 
 home = os.path.expanduser("~")
 target_folder = home + '/notebooks/' + folder
@@ -13,7 +15,7 @@ target_folder = home + '/notebooks/' + folder
 if os.path.exists(target_folder):
    shutil.rmtree(target_folder)
     
-shutil.copytree('/SNS/users/j35/notebooks/' + folder, target_folder)
+shutil.copytree('/SNS/users/j35/git/IPTS/' + folder, target_folder)
 
 os.chdir(target_folder)
 
